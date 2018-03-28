@@ -35,6 +35,9 @@ def download(config):
     else:
         clips = clips[:config["clips"]]
 
+    if not os.path.exists(config["workdir"]):
+        os.makedirs(config["workdir"])
+
     for i in range(config["clips"]):
 
         print("Downloading Clips {}/{}".format(i+1, config["clips"]))
