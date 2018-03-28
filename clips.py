@@ -23,7 +23,7 @@ def download(config):
 
     translator = str.maketrans(" ", "+")
 
-    search_query = "flair:{} site:twitch.tv".format(config["flair"].translate(translator))
+    search_query = "flair:{} site:twitch.tv OR site:gfycat.com".format(config["flair"].translate(translator))
 
     for result in sub.search(search_query, time_filter=config["time_filter"], sort="top"):
         clips.append(result.url)
@@ -44,9 +44,12 @@ def download(config):
 
         clip = req.urlopen(clips[i])
 
-        exp = re.compile(r"\[\{\"quality\".{16,17}\"(https://[^,]*)\"")
-        video_link = exp.findall(clip.read().decode("utf-8"))
+        if "twitch" in clips[i]:
+            exp = re.compile(r"\[\{\"quality\".{16,17}\"(https://[^,]*)\"")
+        elif "gfycat" in clips[i]:
+            exp = re.compile(r"https://giant.gfycat.com/\S*\.mp4")
 
+        video_link = exp.findall(clip.read().decode("utf-8"))
         video = req.urlopen(video_link[0])
 
         with open("{}/video{}.mp4".format(config["workdir"], i), "wb") as file:
