@@ -60,6 +60,9 @@ def concat(config):
     for i in range(config["clips"]):
         saved_clips.append(VideoFileClip('{}/video{}.mp4'.format(config["workdir"], i), target_resolution=config["resolution"]))
 
+    if not os.path.exists("output"):
+        os.makedirs("output")
+
     final_clip = concatenate_videoclips(saved_clips)
     final_clip.write_videofile("output/{}".format(config["filename"]), fps=config["fps"])
 
