@@ -17,7 +17,7 @@ order: random                # ordering of clips on the final video, one of: def
 # Script functions
 download: True               # whether or not to download the clips
 concatenate: True            # whether or not to concatenate the clips into a long video
-delete: True                 # delete clips after script is done
+delete: True                 # whether or not to delete clips after script is done
 
 # Video 
 workdir: ./clips             # folder to keep the downloaded clips
