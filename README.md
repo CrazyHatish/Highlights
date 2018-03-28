@@ -1,6 +1,6 @@
 # Subreddit highlights
 
-A script to create simple "highlight videos" by concatenating twitch.tv clips from a subreddit.
+A script to create simple "highlight videos" by concatenating twitch.tv and gfycat clips from a subreddit.
 
 ## Dependencies
 
