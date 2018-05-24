@@ -1,20 +1,28 @@
+<h1>CURRENTLY NOT WORKING</h1>
+Since twitch.tv changed how their clips page is rendered, you can no longer extract the source video from the html response from a request.
+The rest of the README is kept below for documentation purposes.
+
+
+---
+ 
+
 # Subreddit highlights
 
 A script to create simple "highlight videos" by concatenating twitch.tv and gfycat clips from a subreddit.
 
-## Dependencies
+## Installation
 
-* [Python 3](https://www.python.org/downloads/)
+Download the source code as a [zip](https://github.com/CrazyHatish/Highlights/archive/master.zip), navigate to the directory, and ``` pip install -r requirements.txt ```
 
-* [PRAW](https://praw.readthedocs.io/en/latest/index.html)
-`pip install praw`
+OR
 
-* [MoviePy](https://zulko.github.io/moviepy/)
-`pip install moviepy`
-
-* [PyYaml](https://github.com/yaml/pyyaml)
-`pip install pyyaml`
+```
+git clone https://github.com/CrazyHatish/Highlights.git
+cd Highlights
+pip install -r requirements.txt
+```
 
 ## Usage
 
-Install all dependencies, open `config.yaml` and follow the instructions there.
+- Open `config.yaml` and follow the instructions there to configure the script.
+- Run `clips.py`
